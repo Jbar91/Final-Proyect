@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Qlq from "../views/Qlq.vue";
+import Experiments from "../views/Experiments.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/qlq",
     name: "Qlq",
     component: Qlq,
+  },
+  {
+    path: "/experiments",
+    name: "Experiments",
+    component: Experiments,
   },
 ];
 
