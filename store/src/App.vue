@@ -4,18 +4,17 @@
       <Navbar :items="items" />
       <router-view />
     </v-main>
-    <v-footer height="90">
-      <Footer :property="property" />
-    </v-footer>
+
+    <router-link to="/Qlq">QLQ</router-link>
+    <router-link to="/experiments">Exper</router-link>
   </v-app>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
 
 export default {
-  components: { Navbar, Footer },
+  components: { Navbar },
   name: "App",
 
   data() {
@@ -34,14 +33,9 @@ export default {
         "Mouse",
         "Cases",
       ],
-      property: "About us",
     };
   },
 };
 </script>
 
-<style scoped>
-footer {
-  border-top: 2px solid #00877b;
-}
-</style>
+<style scoped></style>
