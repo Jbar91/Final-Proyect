@@ -39,5 +39,6 @@ select {
   line-height: 1.5em;
   padding: 0.5em 3.5em 0.5em 1em;
   appearance: auto;
+  cursor: pointer;
 }
 </style>

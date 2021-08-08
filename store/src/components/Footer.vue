@@ -20,4 +20,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+footer {
+  border-top: 2px solid #00877b;
+}
+</style>
