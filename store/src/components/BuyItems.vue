@@ -4,7 +4,7 @@
       <v-card width="500" height="400">
         <v-card-title primary-title class="d-flex justify-center">
           <div>
-            <h3 class="headline mb-0">Add New Item</h3>
+            <h3 class="headline mb-0">Buy New Article</h3>
           </div>
         </v-card-title>
         <v-container class="d-flex justify-center">
@@ -12,6 +12,10 @@
             <v-row class="my-2 ">
               <label for="item-name"> Article Name:</label>
               <input type="text" name="Name" id="item-name" required />
+            </v-row>
+            <v-row class="my-2 ">
+              <label for="item-category"> Article Category:</label>
+              <Select id="item-category" />
             </v-row>
             <v-row class="my-2">
               <label for="item-quantity">Quantity:</label>
@@ -53,12 +57,18 @@
         </v-container>
       </v-card>
     </v-container>
-    <v-btn icon="mdi-close" class="float-right" @click="$emit('close')"></v-btn>
+    <v-btn icon="mdi-close" class="float-right" @click="$router.go(-1)"></v-btn>
   </v-container>
 </template>
 
 <script>
-export default {};
+import Select from "./Select.vue";
+export default {
+  components: {
+    Select,
+  },
+  methods: {},
+};
 </script>
 
 <style scoped>
