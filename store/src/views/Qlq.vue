@@ -1,5 +1,5 @@
 <template>
-  <v-container :fluid="true" class="py-6 bg-blue-grey-darken-2">
+  <v-container :fluid="true" class="py-6 bg-blue-grey-darken-2 ">
     <v-row v-if="!addItems">
       <StorageComp v-for="item in products" :key="item" :item="item" />
     </v-row>
@@ -27,6 +27,9 @@ export default {
     StorageComp,
     Footer,
     AddItems,
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   data() {
     return {

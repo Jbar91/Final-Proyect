@@ -1,77 +1,52 @@
 <template>
-  <v-container id="buy-popup" class="bg-teal-darken-4 d-flex justify-center">
-    <v-container class="d-flex justify-center align-center">
-      <v-card width="500" height="400">
-        <v-card-title primary-title class="d-flex justify-center">
-          <div>
-            <h3 class="headline mb-0">Buy New Article</h3>
-          </div>
-        </v-card-title>
-        <v-container class="d-flex justify-center">
-          <v-card-text>
-            <v-row class="my-2 ">
-              <label for="item-name"> Article Name:</label>
-              <input type="text" name="Name" id="item-name" required />
-            </v-row>
-            <v-row class="my-2 ">
-              <label for="item-category"> Article Category:</label>
-              <Select id="item-category" />
-            </v-row>
-            <v-row class="my-2">
-              <label for="item-quantity">Quantity:</label>
-              <input
-                type="number"
-                name="Quantity"
-                id="item-quantity"
-                value="10"
-                required
-              />
-            </v-row>
-            <v-row class="my-2">
-              <label for="item-price">Price:</label>
-              <input type="number" name="Price" id="item-price" required />€
-            </v-row>
-            <v-row class="my-2">
-              <label for="img">Image:</label>
-              <input type="file" name="image" id="img" accept="image/*" />
-            </v-row>
-          </v-card-text>
-        </v-container>
-        <v-container>
-          <v-card-actions>
-            <v-btn
-              flat
-              color="blue-accent-1"
-              class="mx-auto"
-              @click="dialog = false"
-              >Cancel</v-btn
-            >
-            <v-btn
-              flat
-              color="blue-accent-1"
-              class="mx-auto"
-              @click="dialog = false"
-              >Accept</v-btn
-            >
-          </v-card-actions>
-        </v-container>
-      </v-card>
-    </v-container>
-    <v-btn icon="mdi-close" class="float-right" @click="$router.go(-1)"></v-btn>
+  <v-container>
+    <v-card class="text-justify" elevation="4">
+      <v-card-title class="justify-center">
+        <h2>Thanks for Reaching Out</h2>
+      </v-card-title>
+      <v-card-title class="justify-center my-4">
+        <v-icon>mdi-email-outline</v-icon>
+        <h3>Mail:</h3>
+        <p>
+          ContacMail@MockUp.com
+        </p>
+      </v-card-title>
+      <v-card-title class="justify-center my-4">
+        <v-icon>mdi-cellphone</v-icon>
+        <h3>Phone Contact:</h3>
+        <p>
+          +0 555-55556
+        </p>
+      </v-card-title>
+      <v-card-title class="justify-center my-4">
+        <v-icon>mdi-twitter</v-icon>
+        <h3>Twitter:</h3>
+        <p>
+          @ContactMockUpTwitter
+        </p>
+      </v-card-title>
+      <v-card-title class="justify-center my-4">
+        <v-icon>mdi-laptop</v-icon>
+        <h3>Work with us:</h3>
+        <p>
+          www.mockupwebpage.com
+        </p>
+      </v-card-title>
+    </v-card>
   </v-container>
 </template>
 
 <script>
-import Select from "../components/Select.vue";
 export default {
   name: "Experiments",
-  components: {
-    Select,
+  components: {},
+  mounted() {
+    window.scrollTo(0, 0);
   },
   data() {
     return {
       popup: true,
-      price: "",
+      price: "lorem*10",
       quantity: 0,
       products: [
         { name: "monitor", Id: 1, quantity: 25, price: 30 },
