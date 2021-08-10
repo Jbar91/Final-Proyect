@@ -3,6 +3,9 @@ import Home from "../views/Home.vue";
 import Qlq from "../views/Qlq.vue";
 import Experiments from "../views/Experiments.vue";
 import BuyItemsPage from "../views/BuyItemsPage.vue";
+import TermsAndConditions from "../views/TermsAndConditions.vue";
+import Support from "../views/Support.vue";
+import Contact from "../views/Contact.vue";
 
 const routes = [
   {
@@ -24,6 +27,21 @@ const routes = [
     path: "/Qlq/buy-items",
     name: "BuyItems",
     component: BuyItemsPage,
+  },
+  {
+    path: "/terms-and-conditions",
+    name: "TermsAndConditions",
+    component: TermsAndConditions,
+  },
+  {
+    path: "/support",
+    name: "Support",
+    component: Support,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
   },
 ];
 
