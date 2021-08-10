@@ -2,9 +2,9 @@
   <v-container :fluid="true">
     <v-row align="center" justify="space-around">
       <p>Made by: elyonson</p>
-      <p>Terms and Conditions</p>
-      <p>{{ property }}</p>
-      <p>Contact</p>
+      <router-link to="/terms-and-conditions">Terms And Conditions</router-link>
+      <router-link to="/support">{{ property }}</router-link>
+      <router-link to="/contact">Contact</router-link>
     </v-row>
   </v-container>
 </template>

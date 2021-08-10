@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <v-main>
-      <Navbar :items="items" />
+      <Navbar />
       <router-view />
     </v-main>
 
     <router-link to="/Qlq">QLQ</router-link>
-    <router-link to="/experiments">Exper</router-link>
+    <router-link to="/experiments"><v-btn>Experiments</v-btn></router-link>
   </v-app>
 </template>
 
@@ -18,22 +18,7 @@ export default {
   name: "App",
 
   data() {
-    return {
-      items: [
-        "Filter",
-        "CPU",
-        "Motherboard",
-        "GPU",
-        "RAM Memory",
-        "Storage",
-        "PSU",
-        "Cooling Fans",
-        "Monitors",
-        "Keyboards",
-        "Mouse",
-        "Cases",
-      ],
-    };
+    return {};
   },
 };
 </script>

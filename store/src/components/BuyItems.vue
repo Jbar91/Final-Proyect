@@ -43,7 +43,10 @@
               flat
               color="blue-accent-1"
               class="mx-auto"
-              @click="dialog = false"
+              @click="
+                dialog = false;
+                $router.go(-1);
+              "
               >Cancel</v-btn
             >
             <v-btn
@@ -57,7 +60,11 @@
         </v-container>
       </v-card>
     </v-container>
-    <v-btn icon="mdi-close" class="float-right" @click="$router.go(-1)"></v-btn>
+    <v-btn
+      icon="mdi-close"
+      class="float-right d-none d-sm-block"
+      @click="$router.go(-1)"
+    ></v-btn>
   </v-container>
 </template>
 

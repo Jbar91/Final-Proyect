@@ -38,7 +38,11 @@
         </v-container>
         <v-container>
           <v-card-actions>
-            <v-btn flat color="blue-accent-1" class="mx-auto" @click="print"
+            <v-btn
+              flat
+              color="blue-accent-1"
+              class="mx-auto"
+              @click="$emit('close')"
               >Cancel</v-btn
             >
             <v-btn
@@ -52,7 +56,11 @@
         </v-container>
       </v-card>
     </v-container>
-    <v-btn icon="mdi-close" class="float-right" @click="$emit('close')"></v-btn>
+    <v-btn
+      icon="mdi-close"
+      class="float-right d-none d-sm-block"
+      @click="$emit('close')"
+    ></v-btn>
   </v-container>
 </template>
 

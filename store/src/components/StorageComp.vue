@@ -1,5 +1,10 @@
 <template>
-  <v-card flat width="80%" height="130" class="my-5 mx-auto bg-blue-lighten-4">
+  <v-card
+    flat
+    height="130"
+    :width="tried"
+    class="my-5 mx-auto bg-blue-lighten-4 d-block d-sm-block"
+  >
     <v-row class="mt-7">
       <v-col align="center">
         <v-img src="../assets/logo.png" class="display-img"></v-img>
@@ -25,8 +30,22 @@ export default {
       type: Object,
     },
   },
+  mounted() {
+    console.log(this.$vuetify.display.name);
+  },
   data() {
     return {};
+  },
+  computed: {
+    tried() {
+      switch (this.$vuetify.display.name) {
+        case "xs":
+          return "100%";
+        case "sm":
+          return "80%";
+      }
+      return "80%";
+    },
   },
 };
 </script>
