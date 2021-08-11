@@ -2,7 +2,7 @@
   <v-card
     flat
     height="130"
-    :width="tried"
+    :width="width"
     class="my-5 mx-auto bg-blue-lighten-4 d-block d-sm-block"
   >
     <v-row class="mt-7">
@@ -30,14 +30,12 @@ export default {
       type: Object,
     },
   },
-  mounted() {
-    console.log(this.$vuetify.display.name);
-  },
+
   data() {
     return {};
   },
   computed: {
-    tried() {
+    width() {
       switch (this.$vuetify.display.name) {
         case "xs":
           return "100%";

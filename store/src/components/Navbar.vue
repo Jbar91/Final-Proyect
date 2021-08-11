@@ -8,7 +8,7 @@
     ></v-img>
     <Select />
     <v-btn class="ml-auto mr-4">
-      <v-icon>mdi-cart-outline</v-icon>
+      <v-icon>mdi-login-variant</v-icon>
     </v-btn>
   </v-app-bar>
 </template>

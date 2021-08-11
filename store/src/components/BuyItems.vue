@@ -33,7 +33,13 @@
             </v-row>
             <v-row class="my-2">
               <label for="img">Image:</label>
-              <input type="file" name="image" id="img" accept="image/*" />
+              <input
+                type="file"
+                name="image"
+                id="img"
+                accept="image/*"
+                disabled
+              />
             </v-row>
           </v-card-text>
         </v-container>
