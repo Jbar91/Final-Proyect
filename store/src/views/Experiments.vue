@@ -1,68 +1,50 @@
 <template>
   <v-container>
-    <v-card class="text-justify" elevation="4">
-      <v-card-title class="justify-center">
-        <h2>Thanks for Reaching Out</h2>
-      </v-card-title>
-      <v-card-title class="justify-center my-4">
-        <v-icon>mdi-email-outline</v-icon>
-        <h3>Mail:</h3>
-        <p>
-          ContacMail@MockUp.com
-        </p>
-      </v-card-title>
-      <v-card-title class="justify-center my-4">
-        <v-icon>mdi-cellphone</v-icon>
-        <h3>Phone Contact:</h3>
-        <p>
-          +0 555-55556
-        </p>
-      </v-card-title>
-      <v-card-title class="justify-center my-4">
-        <v-icon>mdi-twitter</v-icon>
-        <h3>Twitter:</h3>
-        <p>
-          @ContactMockUpTwitter
-        </p>
-      </v-card-title>
-      <v-card-title class="justify-center my-4">
-        <v-icon>mdi-laptop</v-icon>
-        <h3>Work with us:</h3>
-        <p>
-          www.mockupwebpage.com
-        </p>
-      </v-card-title>
-    </v-card>
+    <ul>
+      <li v-for="item in items" :key="item.id">
+        {{ item.name }} + {{ item.price }}
+      </li>
+    </ul>
   </v-container>
+  <form action="">
+    <input type="text" v-model="name" />
+    <input type="number" v-model="price" />
+    <v-btn @click="send">Show</v-btn>
+  </form>
 </template>
 
 <script>
+import json from "@/assets/articles.json";
+
 export default {
   name: "Experiments",
   components: {},
+  emits: ["event"],
   mounted() {
     window.scrollTo(0, 0);
   },
   data() {
     return {
       popup: true,
-      price: "lorem*10",
       quantity: 0,
-      products: [
-        { name: "monitor", Id: 1, quantity: 25, price: 30 },
-        { name: "monitor", Id: 2, quantity: 25, price: 30 },
-        { name: "monitor", Id: 3, quantity: 25, price: 30 },
-        { name: "monitor", Id: 4, quantity: 25, price: 30 },
-        { name: "monitor", Id: 5, quantity: 25, price: 30 },
-        { name: "monitor", Id: 6, quantity: 25, price: 30 },
-        { name: "monitor", Id: 7, quantity: 25, price: 30 },
-      ],
+      items: json.articles,
+      name: "",
+      price: "",
     };
   },
   methods: {
     show() {
       this.popup = !this.popup;
       console.log(this.quantity);
+    },
+    send() {
+      let test = {
+        name: this.name,
+        price: this.price,
+      };
+      this.items = [...this.items, test];
+      console.log(test);
+      this.$emit("event", this.items);
     },
   },
   computed: {

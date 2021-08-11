@@ -6,7 +6,7 @@
     <AddItems :items="products" v-if="addItems" @close="showBuy" />
     <v-container :fluid="true" align="end">
       <v-btn class="my-3 mx-4" @click="showBuy">Add Items</v-btn>
-      <router-link style="text-decoration: none" to="/Qlq/buy-items">
+      <router-link style="text-decoration: none" to="/buy-items">
         <v-btn class="my-3 mx-4">Buy Items</v-btn>
       </router-link>
     </v-container>
@@ -22,7 +22,7 @@ import Footer from "../components/Footer.vue";
 import AddItems from "../components/AddItems.vue";
 
 export default {
-  name: "Qlq",
+  name: "Storage",
   components: {
     StorageComp,
     Footer,
