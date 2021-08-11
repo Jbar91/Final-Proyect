@@ -2,11 +2,8 @@
   <v-app>
     <v-main>
       <Navbar />
-      <router-view />
+      <router-view @event="result" />
     </v-main>
-
-    <router-link to="/Qlq">QLQ</router-link>
-    <router-link to="/experiments"><v-btn>Experiments</v-btn></router-link>
   </v-app>
 </template>
 
@@ -18,7 +15,14 @@ export default {
   name: "App",
 
   data() {
-    return {};
+    return {
+      event: "Hi",
+    };
+  },
+  methods: {
+    result(event) {
+      this.event = event;
+    },
   },
 };
 </script>
