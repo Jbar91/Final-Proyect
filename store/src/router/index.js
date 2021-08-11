@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Qlq from "../views/Qlq.vue";
+import Storage from "../views/Storage.vue";
 import Experiments from "../views/Experiments.vue";
 import BuyItemsPage from "../views/BuyItemsPage.vue";
 import TermsAndConditions from "../views/TermsAndConditions.vue";
@@ -9,14 +9,14 @@ import Contact from "../views/Contact.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/Qlq",
     name: "Home",
     component: Home,
   },
   {
-    path: "/qlq",
-    name: "Qlq",
-    component: Qlq,
+    path: "/",
+    name: "Storage",
+    component: Storage,
   },
   {
     path: "/experiments",
@@ -24,7 +24,7 @@ const routes = [
     component: Experiments,
   },
   {
-    path: "/Qlq/buy-items",
+    path: "/buy-items",
     name: "BuyItems",
     component: BuyItemsPage,
   },
