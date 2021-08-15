@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container class="contact-display">
     <v-card class="text-justify" elevation="4">
       <v-card-title class="justify-center">
-        <h2>Thanks for Reaching Out</h2>
+        <h2 style="text-align:center;">Thanks for Reaching Out</h2>
       </v-card-title>
       <v-card-title class="justify-center my-4 flex-wrap">
         <v-icon>mdi-email-outline</v-icon>
@@ -42,4 +42,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.contact-display {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="support-display">
     <v-card class="text-justify" elevation="4">
       <v-card-title class="justify-center">
         <h2>Support Page</h2>
@@ -35,4 +35,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.support-display {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>

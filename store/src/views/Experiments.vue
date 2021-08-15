@@ -2,19 +2,20 @@
   <v-container>
     <ul>
       <li v-for="item in items" :key="item.id">
-        {{ item.name }} + {{ item.price }}
+        {{ item.name }} + {{ item.price }} + {{ item.img }}
       </li>
     </ul>
   </v-container>
   <form action="">
     <input type="text" v-model="name" />
     <input type="number" v-model="price" />
+    <input type="file" name="" id="" accept="image/*" />
     <v-btn @click="send">Show</v-btn>
   </form>
 </template>
 
 <script>
-import json from "@/assets/articles.json";
+import { articles } from "@/assets/data/articles.json";
 
 export default {
   name: "Experiments",
@@ -27,9 +28,10 @@ export default {
     return {
       popup: true,
       quantity: 0,
-      items: json.articles,
+      items: articles,
       name: "",
       price: "",
+      img: "",
     };
   },
   methods: {
@@ -41,6 +43,7 @@ export default {
       let test = {
         name: this.name,
         price: this.price,
+        img: this.img,
       };
       this.items = [...this.items, test];
       console.log(test);
