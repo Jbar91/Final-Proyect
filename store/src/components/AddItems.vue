@@ -1,5 +1,5 @@
 <template>
-  <v-container class="bg-teal-darken-4 d-flex justify-center">
+  <v-container class="bg-teal-darken-4 d-flex justify-center ">
     <v-container class="d-flex justify-center ">
       <v-card width="500">
         <v-card-title primary-title class="d-flex justify-center">
@@ -11,7 +11,7 @@
           <v-card-text>
             <v-row class="my-2 ">
               <label for="item-name"> Article:</label>
-              <select name="try" id="qlq" v-model="option">
+              <select name="articles-stock" id="item-name" v-model="option">
                 <option
                   v-for="item in items"
                   :key="item"
@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     print() {
-      console.log(this.quantity, this.optoin.price);
+      console.log(this.quantity, this.option.price);
     },
   },
   computed: {
@@ -115,7 +115,7 @@ select {
   display: inline-block;
   font: inherit;
   line-height: 1.5em;
-  padding: 0.5em 3.5em 0.5em 1em;
+  padding: 5px;
   appearance: auto;
   cursor: pointer;
 }

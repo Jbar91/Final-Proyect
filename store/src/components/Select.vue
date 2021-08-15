@@ -5,23 +5,12 @@
 </template>
 
 <script>
+import { categories } from "../assets/data/articles.json";
+
 export default {
   data() {
     return {
-      items: [
-        "Filter",
-        "CPU",
-        "Motherboard",
-        "GPU",
-        "RAM Memory",
-        "Storage",
-        "PSU",
-        "Cooling Fans",
-        "Monitors",
-        "Keyboards",
-        "Mouse",
-        "Cases",
-      ],
+      items: categories,
     };
   },
 };
