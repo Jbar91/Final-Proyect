@@ -8,7 +8,7 @@
       <v-row>
         <v-col align="center" cols="3" md="3" sm="3">
           <img
-            :src="require('../assets/logo.png')"
+            :src="require(`@/assets/imgs/${item.img}`)"
             alt="item"
             class="display-img v-img"
           />
