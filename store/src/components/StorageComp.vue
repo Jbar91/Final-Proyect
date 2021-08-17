@@ -2,19 +2,19 @@
   <v-col cols="12" md="6" sm="12">
     <v-card
       flat
-      height="130"
-      class="my-5 mx-auto bg-blue-lighten-4 d-flex align-center"
+      min-height="130"
+      class="ma-3 bg-blue-lighten-4 d-flex align-center "
     >
       <v-row>
-        <v-col align="center" cols="3" md="3" sm="3">
+        <v-col align="center" cols="6" md="3" sm="3">
           <img
             :src="require(`@/assets/imgs/${item.img}`)"
-            alt="item"
+            :alt="item.name"
             class="display-img v-img"
           />
         </v-col>
         <v-col
-          cols="3"
+          cols="6"
           md="4"
           sm="5"
           class="d-flex justify-center"
@@ -26,10 +26,10 @@
             </p></v-card-title
           >
         </v-col>
-        <v-col align="center" cols="2" md="2" sm="2">
+        <v-col align="center" cols="6" md="2" sm="2">
           <v-card-text>Article ID:{{ item.Id }}</v-card-text>
         </v-col>
-        <v-col align="center" cols="3" md="3" sm="2">
+        <v-col align="center" cols="6" md="3" sm="2">
           <v-card-text>Quantity:{{ item.quantity }}</v-card-text>
         </v-col>
       </v-row>
@@ -55,8 +55,9 @@ export default {
 
 <style scoped>
 .display-img {
-  max-width: 50px;
-  height: 50px;
+  max-width: 70px;
+  height: 70px;
+  background-color: white;
   border: 1px solid black;
 }
 .price {
