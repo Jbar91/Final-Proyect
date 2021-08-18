@@ -1,0 +1,370 @@
+{
+  "categories": [
+    "",
+    "CPU",
+    "Motherboard",
+    "RAM",
+    "PSU",
+    "Storage",
+    "Video Card",
+    "Fans",
+    "Cases",
+    "Mouse",
+    "Keyboards",
+    "Monitors"
+  ],
+  "articles": [
+    {
+      "name": "AMD Ryzen 7 5700G",
+      "Id": 1,
+      "quantity": 25,
+      "price": 379.99,
+      "category": "CPU",
+      "img": "CPU/Amd-Ryzen7.jpg"
+    },
+    {
+      "name": "AMD Ryzen 5 5600X",
+      "Id": 2,
+      "quantity": 25,
+      "price": 287.06,
+      "category": "CPU",
+      "img": "CPU/Amd-Ryzen5.jpg"
+    },
+    {
+      "name": "Intel Core I7 10700K",
+      "Id": 3,
+      "quantity": 25,
+      "price": 307.03,
+      "category": "CPU",
+      "img": "CPU/Intel-i7.jpg"
+    },
+    {
+      "name": "Intel Core I5 10400F",
+      "Id": 4,
+      "quantity": 25,
+      "price": 198.9,
+      "category": "CPU",
+      "img": "CPU/Intel-i5.jpg"
+    },
+    {
+      "name": "ASUS ROG STRIX B550-F",
+      "Id": 5,
+      "quantity": 25,
+      "price": 185.75,
+      "category": "Motherboard",
+      "img": "MotherBoards/ASUS-ROG.jpg"
+    },
+    {
+      "name": "ASUS TUF GAMING X570",
+      "Id": 6,
+      "quantity": 25,
+      "price": 231.65,
+      "category": "Motherboard",
+      "img": "MotherBoards/ASUS-Tuf.jpg"
+    },
+    {
+      "name": "MSI MAG B550 TOMAHAWK",
+      "Id": 7,
+      "quantity": 25,
+      "price": 172.95,
+      "category": "Motherboard",
+      "img": "MotherBoards/MSI-Tomahawk.jpg"
+    },
+    {
+      "name": "MSI Z490-A PRO",
+      "Id": 8,
+      "quantity": 25,
+      "price": 124.99,
+      "category": "Motherboard",
+      "img": "MotherBoards/MSI-Z490.jpg"
+    },
+    {
+      "name": "Corsair Vengeance LPX 16GB",
+      "Id": 9,
+      "quantity": 25,
+      "price": 86.96,
+      "category": "RAM",
+      "img": "RAM/CorsairVengeance-16GB-2x8.jpg"
+    },
+    {
+      "name": "Crucial Ballistix 32GB",
+      "Id": 10,
+      "quantity": 25,
+      "price": 210.5,
+      "category": "RAM",
+      "img": "RAM/Ballistix-32GB-2x16.jpg"
+    },
+    {
+      "name": "Corsair Vengeance RGB 32GB",
+      "Id": 11,
+      "quantity": 25,
+      "price": 204.99,
+      "category": "RAM",
+      "img": "RAM/CorsairVengeance-32GB-2x16.jpg"
+    },
+    {
+      "name": "HyperX Fury 16GB",
+      "Id": 12,
+      "quantity": 25,
+      "price": 91.95,
+      "category": "RAM",
+      "img": "RAM/Hyperx-16GB-2x8.jpg"
+    },
+    {
+      "name": "Corsair HX Platinum",
+      "Id": 13,
+      "quantity": 25,
+      "price": 214.99,
+      "category": "PSU",
+      "img": "PSU/CorsairPlat.jpg"
+    },
+    {
+      "name": "Corsair RM",
+      "Id": 14,
+      "quantity": 25,
+      "price": 99.63,
+      "category": "PSU",
+      "img": "PSU/CorsairRM.jpg"
+    },
+    {
+      "name": "EVGA BQ",
+      "Id": 15,
+      "quantity": 25,
+      "price": 86.01,
+      "category": "PSU",
+      "img": "PSU/EVGABq.jpg"
+    },
+    {
+      "name": "SeaSonic Focus Gold",
+      "Id": 16,
+      "quantity": 25,
+      "price": 105.65,
+      "category": "PSU",
+      "img": "PSU/SeaSonicGold.jpg"
+    },
+    {
+      "name": "Seagate Barracuda 2TB HDD",
+      "Id": 17,
+      "quantity": 25,
+      "price": 53.03,
+      "category": "Storage",
+      "img": "Storage/Seagate-2TB-HDD.jpg"
+    },
+    {
+      "name": "Samsung 970 EVO Plus 1TB SSD",
+      "Id": 18,
+      "quantity": 25,
+      "price": 153.25,
+      "category": "Storage",
+      "img": "Storage/SamsungEVO-1TB-SSD.jpg"
+    },
+    {
+      "name": "Seagate Barracuda 4TB HDD",
+      "Id": 19,
+      "quantity": 25,
+      "price": 90.07,
+      "category": "Storage",
+      "img": "Storage/Seagate-Barracuda-4TB.png"
+    },
+    {
+      "name": "Western Digital Blue 1TB SSD",
+      "Id": 20,
+      "quantity": 25,
+      "price": 106.95,
+      "category": "Storage",
+      "img": "Storage/WD-blue-1TB-SSD.jpg"
+    },
+    {
+      "name": "GeForce GTX 1660Ti Gigabyte",
+      "Id": 21,
+      "quantity": 25,
+      "price": 448.61,
+      "category": "Video Card",
+      "img": "GPU/1660Ti-Gb.jpg"
+    },
+    {
+      "name": "GeForce RTX 2080 EVGA",
+      "Id": 22,
+      "quantity": 25,
+      "price": 723.5,
+      "category": "Video Card",
+      "img": "GPU/2080-EVGA.jpg"
+    },
+    {
+      "name": "GeForce RTX 3070 MSI",
+      "Id": 23,
+      "quantity": 25,
+      "price": 1399.99,
+      "category": "Video Card",
+      "img": "GPU/3070-MSI.jpg"
+    },
+    {
+      "name": "Radeon RX 5700 XT Gigabyte",
+      "Id": 24,
+      "quantity": 25,
+      "price": 480.69,
+      "category": "Video Card",
+      "img": "GPU/5700-Gb.jpg"
+    },
+    {
+      "name": "Arctic P12 120mm",
+      "Id": 25,
+      "quantity": 25,
+      "price": 9.64,
+      "category": "Fans",
+      "img": "Fans/Arctic-P12.jpg"
+    },
+    {
+      "name": "Corsair 120 LL 3-Pack 120mm",
+      "Id": 26,
+      "quantity": 25,
+      "price": 93.9,
+      "category": "Fans",
+      "img": "Fans/Corsair-3Pair-RGB.jpg"
+    },
+    {
+      "name": "NZXT AER RGB 2-Pack 120mm",
+      "Id": 27,
+      "quantity": 25,
+      "price": 29.87,
+      "category": "Fans",
+      "img": "Fans/NZXT-2.jpg"
+    },
+    {
+      "name": "Noctua F12 120mm",
+      "Id": 28,
+      "quantity": 25,
+      "price": 28.9,
+      "category": "Fans",
+      "img": "Fans/Noctua-P12-redux.jpg"
+    },
+    {
+      "name": "NZXT H510 Black",
+      "Id": 29,
+      "quantity": 25,
+      "price": 59.96,
+      "category": "Cases",
+      "img": "Cases/NZXT-H510-Black.jpg"
+    },
+    {
+      "name": "Lian-Li Lancool Mesh",
+      "Id": 30,
+      "quantity": 25,
+      "price": 89.89,
+      "category": "Cases",
+      "img": "Cases/LianLi-IIMesh-White.jpg"
+    },
+    {
+      "name": "Corsair 4000D Airflow",
+      "Id": 31,
+      "quantity": 25,
+      "price": 69.23,
+      "category": "Cases",
+      "img": "Cases/Corsair4000D-Airflow-black.jpg"
+    },
+    {
+      "name": "ASUS TUF GT501",
+      "Id": 32,
+      "quantity": 25,
+      "price": 112.9,
+      "category": "Cases",
+      "img": "Cases/ASUS-TUF.jpg"
+    },
+    {
+      "name": "Razer Huntsman Mini",
+      "Id": 33,
+      "quantity": 25,
+      "price": 110,
+      "category": "Keyboard",
+      "img": "Keyboards/RazerHuntsman-mini.jpg"
+    },
+    {
+      "name": "Ducky One 2 Mini",
+      "Id": 34,
+      "quantity": 25,
+      "price": 115.9,
+      "category": "Keyboard",
+      "img": "Keyboards/DuckyOne.jpg"
+    },
+    {
+      "name": "SteelSeries Apex Pro",
+      "Id": 35,
+      "quantity": 25,
+      "price": 209.99,
+      "category": "Keyboard",
+      "img": "Keyboards/SteelSeries-Apex.jpg"
+    },
+    {
+      "name": "Corsair K63",
+      "Id": 36,
+      "quantity": 25,
+      "price": 109.34,
+      "category": "Keyboard",
+      "img": "Keyboards/CorsairVengeance.jpg"
+    },
+    {
+      "name": "Logitech G502",
+      "Id": 37,
+      "quantity": 25,
+      "price": 77.17,
+      "category": "Mouse",
+      "img": "Mouse/LogitechG502.jpg"
+    },
+    {
+      "name": "Razer Viper Mini",
+      "Id": 38,
+      "quantity": 25,
+      "price": 34.99,
+      "category": "Mouse",
+      "img": "Mouse/Razer-Vipermini.jpg"
+    },
+    {
+      "name": "Corsair Dark-Core",
+      "Id": 39,
+      "quantity": 25,
+      "price": 99.99,
+      "category": "Mouse",
+      "img": "Mouse/Corsair-DarkCore.jpg"
+    },
+    {
+      "name": "Razer Basilisk",
+      "Id": 40,
+      "quantity": 25,
+      "price": 49.99,
+      "category": "Mouse",
+      "img": "Mouse/Razer-Basilisk.jpg"
+    },
+    {
+      "name": "ASUS ROG SWIFT 25\"",
+      "Id": 41,
+      "quantity": 25,
+      "price": 697.99,
+      "category": "Monitor",
+      "img": "Monitors/ASUS-ROG-swift-25.jpg"
+    },
+    {
+      "name": "HP 25X 25\"",
+      "Id": 42,
+      "quantity": 25,
+      "price": 279.5,
+      "category": "Monitor",
+      "img": "Monitors/HP-25X-25.jpg"
+    },
+    {
+      "name": "MSI Optix G24C24 23.6\"",
+      "Id": 43,
+      "quantity": 25,
+      "price": 208.99,
+      "category": "Monitor",
+      "img": "Monitors/MSI-Optix-24.jpg"
+    },
+    {
+      "name": "Samsung Odyssey G9 49\"",
+      "Id": 44,
+      "quantity": 25,
+      "price": 1309.9,
+      "category": "Monitor",
+      "img": "Monitors/Samsung-odysseyG9-49.jpg"
+    }
+  ]
+}
