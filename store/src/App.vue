@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <Navbar />
+    <Navbar @filter="filter($event)" />
     <v-main>
-      <router-view />
+      <router-view :filterValue="filterValue" />
     </v-main>
     <v-footer>
       <Footer />
@@ -21,11 +21,12 @@ export default {
   data() {
     return {
       event: "Hi",
+      filterValue: "All",
     };
   },
   methods: {
-    result(event) {
-      this.event = event;
+    filter(value = "All") {
+      this.filterValue = value;
     },
   },
 };
