@@ -51,14 +51,10 @@ export default {
     filter() {
       let filtered = this.products;
       let value = this.filterValue;
-      let qlq = filtered.filter(function(article) {
-        if (value === "All") {
-          return article;
-        } else {
-          return article.category === value;
-        }
+      let filteredItems = filtered.filter(function(article) {
+        return value === "All" ? article : article.category === value;
       });
-      return qlq;
+      return filteredItems;
     },
   },
 };
