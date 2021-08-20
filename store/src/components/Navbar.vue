@@ -1,9 +1,9 @@
 <template>
   <v-app-bar>
     <router-link to="/" class="mr-auto ml-4">
-      <img :src="require('../assets/pc-tower.svg')" alt="logo" />
+      <img :src="require('../assets/logo50.png')" alt="logo" />
     </router-link>
-    <Select @filter="trie($event)" />
+    <Select @filter="send($event)" />
     <v-btn class="ml-auto mr-4" aria-label="Login">
       <v-icon>mdi-login-variant</v-icon>
     </v-btn>
@@ -19,7 +19,7 @@ export default {
   name: "Navbar",
 
   methods: {
-    trie(value) {
+    send(value) {
       this.$emit("filter", value);
     },
   },
