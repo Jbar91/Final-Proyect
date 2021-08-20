@@ -85,7 +85,7 @@ export default {
   computed: {
     totalPrice() {
       const result = this.quantity * this.option.price * 1;
-      return result ? result : "";
+      return result ? result.toFixed(2) : "";
     },
   },
 };
