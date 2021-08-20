@@ -1,6 +1,6 @@
 {
   "categories": [
-    "",
+    "All",
     "CPU",
     "Motherboard",
     "RAM",
@@ -275,7 +275,7 @@
       "Id": 33,
       "quantity": 25,
       "price": 110,
-      "category": "Keyboard",
+      "category": "Keyboards",
       "img": "Keyboards/RazerHuntsman-mini.jpg"
     },
     {
@@ -283,7 +283,7 @@
       "Id": 34,
       "quantity": 25,
       "price": 115.9,
-      "category": "Keyboard",
+      "category": "Keyboards",
       "img": "Keyboards/DuckyOne.jpg"
     },
     {
@@ -291,7 +291,7 @@
       "Id": 35,
       "quantity": 25,
       "price": 209.99,
-      "category": "Keyboard",
+      "category": "Keyboards",
       "img": "Keyboards/SteelSeries-Apex.jpg"
     },
     {
@@ -299,7 +299,7 @@
       "Id": 36,
       "quantity": 25,
       "price": 109.34,
-      "category": "Keyboard",
+      "category": "Keyboards",
       "img": "Keyboards/CorsairVengeance.jpg"
     },
     {
@@ -339,7 +339,7 @@
       "Id": 41,
       "quantity": 25,
       "price": 697.99,
-      "category": "Monitor",
+      "category": "Monitors",
       "img": "Monitors/ASUS-ROG-swift-25.jpg"
     },
     {
@@ -347,7 +347,7 @@
       "Id": 42,
       "quantity": 25,
       "price": 279.5,
-      "category": "Monitor",
+      "category": "Monitors",
       "img": "Monitors/HP-25X-25.jpg"
     },
     {
@@ -355,7 +355,7 @@
       "Id": 43,
       "quantity": 25,
       "price": 208.99,
-      "category": "Monitor",
+      "category": "Monitors",
       "img": "Monitors/MSI-Optix-24.jpg"
     },
     {
@@ -363,7 +363,7 @@
       "Id": 44,
       "quantity": 25,
       "price": 1309.9,
-      "category": "Monitor",
+      "category": "Monitors",
       "img": "Monitors/Samsung-odysseyG9-49.jpg"
     }
   ]

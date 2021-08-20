@@ -1,6 +1,14 @@
 <template>
-  <select name="try" id="some" class="mx-auto">
-    <option v-for="item in items" :key="item" :value="items">{{ item }}</option>
+  <select
+    v-model="options"
+    name="options"
+    id="select-articles"
+    class="mx-auto"
+    @click="send"
+  >
+    <option v-for="item in items" :key="item" :value="{ categoryValue: item }">
+      {{ item }}
+    </option>
   </select>
 </template>
 
@@ -8,10 +16,17 @@
 import { categories } from "../assets/data/articles.json";
 
 export default {
+  emits: ["filter"],
   data() {
     return {
       items: categories,
+      options: "",
     };
+  },
+  methods: {
+    send() {
+      this.$emit("filter", this.options.categoryValue);
+    },
   },
 };
 </script>

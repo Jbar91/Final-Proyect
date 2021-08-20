@@ -1,7 +1,7 @@
 <template>
   <v-container :fluid="true" class="py-6 bg-blue-grey-darken-2 add-display">
     <v-row v-if="!addItems">
-      <StorageComp v-for="item in products" :key="item" :item="item" />
+      <StorageComp v-for="item in filter" :key="item" :item="item" />
     </v-row>
     <AddItems :items="products" v-if="addItems" @close="showBuy" />
     <v-container :fluid="true" align="end">
@@ -22,12 +22,18 @@ import { articles } from "../assets/data/articles.json";
 
 export default {
   name: "Storage",
+  props: {
+    filterValue: {
+      type: String,
+    },
+  },
   components: {
     StorageComp,
     AddItems,
   },
   mounted() {
     window.scrollTo(0, 0);
+    this.filterValue;
   },
   data() {
     return {
@@ -39,6 +45,16 @@ export default {
   methods: {
     showBuy() {
       this.addItems = !this.addItems;
+    },
+  },
+  computed: {
+    filter() {
+      let filtered = this.products;
+      let value = this.filterValue;
+      let filteredItems = filtered.filter(function(article) {
+        return value === "All" ? article : article.category === value;
+      });
+      return filteredItems;
     },
   },
 };
