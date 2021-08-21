@@ -58,17 +58,7 @@ export default {
   height: 70px;
   background-color: white;
   border: 1px solid black;
-}
-.price {
-  padding: 10px 8px;
-  border: 1px solid black;
-  width: fit-content;
-  border-radius: 5px;
-}
-.pricetag {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: black;
+  margin-top: 8px;
 }
 .text {
   line-height: initial;
