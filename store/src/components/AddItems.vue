@@ -4,35 +4,52 @@
       <v-card width="500">
         <v-card-title primary-title class="d-flex justify-center">
           <div>
-            <h3 class="headline mb-0">Add Items</h3>
+            <h3 class="headline mb-0">Manage Items</h3>
           </div>
         </v-card-title>
         <v-container class="d-flex justify-center">
           <v-card-text>
-            <v-row class="my-2 ">
+            <v-row class="my-3 ">
               <label for="item-name"> Article:</label>
               <select name="articles-stock" id="item-name" v-model="option">
                 <option
-                  v-for="item in items"
+                  v-for="(item, Id) in options"
                   :key="item"
-                  :value="{ price: item.price }"
+                  :value="{
+                    price: item.price,
+                    id: Id,
+                  }"
                   >{{ item.name }}</option
                 >
               </select>
             </v-row>
             <v-row class="my-3">
-              <label for="item-quantity">Quantity:</label>
+              <label for="item-quantity">Quantity to Add:</label>
               <input
                 type="number"
-                name="Quantity"
-                id="item-quantity"
-                required
-                v-model="quantity"
+                name="QuantityAdded"
+                id="quantity-bought"
+                min="0"
+                v-model="amountAdded"
               />
             </v-row>
-            <v-row class="mt-3">
+            <v-row class="my-3">
               <label for="item-price">Total Price:</label>
               <div>{{ totalPrice }}€</div>
+            </v-row>
+            <v-row class="my-3">
+              <label for="item-quantity">Quantity Sold:</label>
+              <input
+                type="number"
+                name="QuantitySold"
+                id="quantity-sold"
+                min="0"
+                v-model="amountSold"
+              />
+            </v-row>
+            <v-row class="my-3">
+              <label for="item-cost">Total Cost:</label>
+              <div>{{ totalCost }}€</div>
             </v-row>
           </v-card-text>
         </v-container>
@@ -49,7 +66,10 @@
               flat
               color="blue-accent-1"
               class="mx-auto"
-              @click="dialog = false"
+              @click="
+                add();
+                substract();
+              "
               >Accept</v-btn
             >
           </v-card-actions>
@@ -74,18 +94,29 @@ export default {
   data() {
     return {
       option: "",
-      quantity: 0,
+      amountAdded: 0,
+      amountSold: 0,
+      options: this.items,
     };
   },
   methods: {
-    print() {
-      console.log(this.quantity, this.option.price);
+    add() {
+      this.$emit("add", Number(this.amountAdded), this.option.id);
+      this.amountAdded = 0;
+    },
+    substract() {
+      this.$emit("substract", Number(-this.amountSold), this.option.id);
+      this.amountSold = 0;
     },
   },
   computed: {
     totalPrice() {
-      const result = this.quantity * this.option.price * 1;
+      const result = this.amountAdded * this.option.price * 1;
       return result ? result.toFixed(2) : "";
+    },
+    totalCost() {
+      const cost = this.amountSold * this.option.price * 1;
+      return cost ? cost.toFixed(2) : "";
     },
   },
 };
