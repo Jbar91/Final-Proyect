@@ -3,14 +3,17 @@
     <v-row v-if="!addItems">
       <StorageComp v-for="item in filter" :key="item" :item="item" />
     </v-row>
-    <AddItems :items="products" v-if="addItems" @close="showBuy" />
+    <AddItems
+      :items="products"
+      v-if="addItems"
+      @close="showBuy"
+      @add="add"
+      @substract="substract"
+    />
     <v-container :fluid="true" align="end">
       <v-btn class="my-3 mx-4" aria-label="Add Items" @click="showBuy"
-        >Add Items</v-btn
+        >Manage Items</v-btn
       >
-      <router-link style="text-decoration: none" to="/buy-items">
-        <v-btn class="my-3 mx-4" aria-label="Buy items">Buy Items</v-btn>
-      </router-link>
     </v-container>
   </v-container>
 </template>
@@ -33,18 +36,24 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
-    this.filterValue;
   },
   data() {
     return {
       property: "Support",
-      addItems: false,
+      addItems: true,
       products: articles,
     };
   },
   methods: {
     showBuy() {
       this.addItems = !this.addItems;
+    },
+    add(amountAdded, id) {
+      this.products[id].quantity = this.products[id].quantity + amountAdded;
+    },
+    substract(amountSold, id) {
+      this.products[id].quantity = this.products[id].quantity + amountSold;
+      this.products[id].quantity < 0 ? (this.products[id].quantity = 0) : "";
     },
   },
   computed: {
