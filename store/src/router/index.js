@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Storage from "../views/Storage.vue";
-import Experiments from "../views/Experiments.vue";
-import BuyItemsPage from "../views/BuyItemsPage.vue";
 import TermsAndConditions from "../views/TermsAndConditions.vue";
 import Support from "../views/Support.vue";
 import Contact from "../views/Contact.vue";
@@ -18,16 +16,7 @@ const routes = [
     name: "Storage",
     component: Storage,
   },
-  {
-    path: "/experiments",
-    name: "Experiments",
-    component: Experiments,
-  },
-  {
-    path: "/buy-items",
-    name: "BuyItems",
-    component: BuyItemsPage,
-  },
+
   {
     path: "/terms-and-conditions",
     name: "TermsAndConditions",
