@@ -1,12 +1,16 @@
 <template>
   <v-app-bar>
-    <router-link to="/" class="mr-auto ml-4">
-      <img :src="require('../assets/logo50.png')" alt="logo" />
+    <router-link to="/" class="mr-auto ml-2">
+      <div class="container">
+        <img :src="require('../assets/logo50.png')" alt="logo" />
+      </div>
     </router-link>
     <Select @filter="send($event)" />
-    <v-btn class="ml-auto mr-4" aria-label="Login">
-      <v-icon>mdi-login-variant</v-icon>
-    </v-btn>
+    <router-link :to="{ name: 'UserLog' }" class="ml-auto mr-4">
+      <v-btn aria-label="Login">
+        <v-icon>mdi-login-variant</v-icon>
+      </v-btn>
+    </router-link>
   </v-app-bar>
 </template>
 
@@ -27,8 +31,12 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  height: 45px;
+  width: 60px;
+}
 img {
-  height: 50px;
-  width: 50px;
+  width: 100%;
+  height: 100%;
 }
 </style>
