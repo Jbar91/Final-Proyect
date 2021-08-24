@@ -1,13 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
 import Storage from "../views/Storage.vue";
 
 const routes = [
-  {
-    path: "/Qlq",
-    name: "Home",
-    component: Home,
-  },
   {
     path: "/",
     name: "Storage",
@@ -38,6 +32,18 @@ const routes = [
     name: "Items",
     component: () =>
       import(/* webpackChunkName: "Items"*/ "../views/Items.vue"),
+  },
+  {
+    path: "/log",
+    name: "UserLog",
+    component: () =>
+      import(/* webpackChunkName: "UserLog"*/ "../views/Log.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () =>
+      import(/* webpackChunkName: "NotFound"*/ "../views/NotFound.vue"),
   },
 ];
 
