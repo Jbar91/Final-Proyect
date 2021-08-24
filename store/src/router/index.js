@@ -1,9 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Storage from "../views/Storage.vue";
-import TermsAndConditions from "../views/TermsAndConditions.vue";
-import Support from "../views/Support.vue";
-import Contact from "../views/Contact.vue";
 
 const routes = [
   {
@@ -16,21 +13,31 @@ const routes = [
     name: "Storage",
     component: Storage,
   },
-
   {
     path: "/terms-and-conditions",
     name: "TermsAndConditions",
-    component: TermsAndConditions,
+    component: () =>
+      import(
+        /* webpackChunkName: "TermsAndConditions"*/ "../views/TermsAndConditions.vue"
+      ),
   },
   {
     path: "/support",
     name: "Support",
-    component: Support,
+    component: () =>
+      import(/* webpackChunkName: "Support"*/ "../views/Support.vue"),
   },
   {
     path: "/contact",
     name: "Contact",
-    component: Contact,
+    component: () =>
+      import(/* webpackChunkName: "Contact"*/ "../views/Contact.vue"),
+  },
+  {
+    path: "/items/:id",
+    name: "Items",
+    component: () =>
+      import(/* webpackChunkName: "Items"*/ "../views/Items.vue"),
   },
 ];
 
