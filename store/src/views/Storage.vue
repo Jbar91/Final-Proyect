@@ -60,10 +60,6 @@ export default {
     },
   },
   computed: {
-    experiment() {
-      let local = localStorage.setItem("products", this.products);
-      return local;
-    },
     filter() {
       let filtered = this.products;
       let value = this.filterValue;
