@@ -34,8 +34,8 @@
               />
             </v-row>
             <v-row class="my-3">
-              <label for="item-price">Total Price:</label>
-              <div>{{ totalPrice }}€</div>
+              <label for="item-price">Total Cost:</label>
+              <div>{{ totalPrice }}<span v-if="totalPrice">€</span></div>
             </v-row>
             <v-row class="my-3">
               <label for="quantity-sold">Quantity Sold:</label>
@@ -48,8 +48,8 @@
               />
             </v-row>
             <v-row class="my-3">
-              <label for="item-cost">Total Cost:</label>
-              <div>{{ totalCost }}€</div>
+              <label for="item-cost">Total Profit:</label>
+              <div>{{ totalCost }} <span v-if="totalCost">€</span></div>
             </v-row>
           </v-card-text>
         </v-container>
