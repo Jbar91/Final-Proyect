@@ -24,10 +24,10 @@
               </select>
             </v-row>
             <v-row class="my-3">
-              <label for="item-quantity">Quantity to Add:</label>
+              <label for="quantity-bought">Quantity to Add:</label>
               <input
                 type="number"
-                name="QuantityAdded"
+                name="Bought input"
                 id="quantity-bought"
                 min="0"
                 v-model="amountAdded"
@@ -38,10 +38,10 @@
               <div>{{ totalPrice }}€</div>
             </v-row>
             <v-row class="my-3">
-              <label for="item-quantity">Quantity Sold:</label>
+              <label for="quantity-sold">Quantity Sold:</label>
               <input
                 type="number"
-                name="QuantitySold"
+                name="Sold input"
                 id="quantity-sold"
                 min="0"
                 v-model="amountSold"
@@ -78,6 +78,7 @@
     </v-container>
     <v-btn
       icon="mdi-close"
+      aria-label="Close button"
       class="float-right d-none d-sm-block"
       @click="$emit('close')"
     ></v-btn>
@@ -103,10 +104,12 @@ export default {
     add() {
       this.$emit("add", Number(this.amountAdded), this.option.id);
       this.amountAdded = 0;
+      localStorage.setItem("products", JSON.stringify(this.options));
     },
     substract() {
       this.$emit("substract", Number(-this.amountSold), this.option.id);
       this.amountSold = 0;
+      localStorage.setItem("products", JSON.stringify(this.options));
     },
   },
   computed: {
