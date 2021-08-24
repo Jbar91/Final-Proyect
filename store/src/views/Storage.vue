@@ -36,11 +36,14 @@ export default {
   },
   mounted() {
     window.scrollTo(0, 0);
+    localStorage.getItem("products")
+      ? (this.products = JSON.parse(localStorage.getItem("products")))
+      : "";
   },
   data() {
     return {
       property: "Support",
-      addItems: true,
+      addItems: false,
       products: articles,
     };
   },
@@ -57,6 +60,10 @@ export default {
     },
   },
   computed: {
+    experiment() {
+      let local = localStorage.setItem("products", this.products);
+      return local;
+    },
     filter() {
       let filtered = this.products;
       let value = this.filterValue;
