@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6" sm="12">
+  <v-col cols="12" lg="4" md="6" sm="12">
     <v-card
       flat
       min-height="130"
@@ -8,11 +8,13 @@
       <v-row>
         <v-col align="center" cols="6" md="3" sm="3">
           <router-link :to="{ name: 'Items', params: { id: item.Id } }">
-            <img
-              :src="require(`@/assets/imgs/${item.img}`)"
-              :alt="item.name"
-              class="display-img v-img"
-            />
+            <div class="display-img">
+              <img
+                :src="require(`@/assets/imgs/${item.img}`)"
+                :alt="item.name"
+                class="example"
+              />
+            </div>
           </router-link>
         </v-col>
         <v-col
@@ -29,7 +31,7 @@
           >
         </v-col>
         <v-col align="center" cols="6" md="2" sm="2">
-          <v-card-text>Article ID:{{ item.Id }}</v-card-text>
+          <v-card-text>ID:{{ item.Id }}</v-card-text>
         </v-col>
         <v-col align="center" cols="6" md="3" sm="2">
           <v-card-text>Quantity:{{ item.quantity }}</v-card-text>
@@ -56,11 +58,21 @@ export default {
 
 <style scoped>
 .display-img {
-  max-width: 70px;
+  width: 70px;
   height: 70px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   border: 1px solid black;
-  margin-top: 8px;
+}
+.v-row {
+  margin: 0px;
+  align-items: center;
+}
+.example {
+  width: 100%;
 }
 .text {
   line-height: initial;
