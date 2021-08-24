@@ -7,11 +7,13 @@
     >
       <v-row>
         <v-col align="center" cols="6" md="3" sm="3">
-          <img
-            :src="require(`@/assets/imgs/${item.img}`)"
-            :alt="item.name"
-            class="display-img v-img"
-          />
+          <router-link :to="{ name: 'Items', params: { id: item.Id } }">
+            <img
+              :src="require(`@/assets/imgs/${item.img}`)"
+              :alt="item.name"
+              class="display-img v-img"
+            />
+          </router-link>
         </v-col>
         <v-col
           cols="6"
