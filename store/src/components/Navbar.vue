@@ -21,7 +21,7 @@ export default {
     Select,
   },
   name: "Navbar",
-
+  emits: ["filter"],
   methods: {
     send(value) {
       this.$emit("filter", value);
