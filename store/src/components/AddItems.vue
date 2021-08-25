@@ -35,7 +35,7 @@
             </v-row>
             <v-row class="my-3">
               <label for="item-price">Total Cost:</label>
-              <div>{{ totalPrice }}<span v-if="totalPrice">€</span></div>
+              <div>{{ totalCost }}<span v-if="totalCost">€</span></div>
             </v-row>
             <v-row class="my-3">
               <label for="quantity-sold">Quantity Sold:</label>
@@ -49,7 +49,7 @@
             </v-row>
             <v-row class="my-3">
               <label for="item-cost">Total Profit:</label>
-              <div>{{ totalCost }} <span v-if="totalCost">€</span></div>
+              <div>{{ totalProfit }} <span v-if="totalProfit">€</span></div>
             </v-row>
           </v-card-text>
         </v-container>
@@ -92,6 +92,7 @@ export default {
       type: Object,
     },
   },
+  emits: ["close", "add", "substract"],
   data() {
     return {
       option: "",
@@ -113,20 +114,22 @@ export default {
     },
   },
   computed: {
-    totalPrice() {
-      const result = this.amountAdded * this.option.price * 1;
-      return result ? result.toFixed(2) : "";
-    },
     totalCost() {
-      const cost = this.amountSold * this.option.price * 1;
-      return cost ? cost.toFixed(2) : "";
+      const Cost = this.amountAdded * this.option.price * 1;
+      return Cost ? Cost.toFixed(2) : "";
+    },
+    totalProfit() {
+      const profit = this.amountSold * this.option.price * 1;
+      return profit ? profit.toFixed(2) : "";
     },
   },
 };
 </script>
 
 <style>
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
+  max-width: 215px;
   margin-left: 5px;
   padding: 2px;
   border: 1px solid black;
@@ -138,9 +141,6 @@ input[type="number"] {
   width: 80px;
   margin-left: 5px;
   padding: 2px;
-}
-input[type="file"] {
-  margin-left: 10px;
 }
 select {
   background-color: white;
