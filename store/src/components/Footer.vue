@@ -1,7 +1,7 @@
 <template>
   <ul class="footer-items">
     <li>
-      <p>Made by: elyonson</p>
+      <p>Made by: Joseba Ibarlucea</p>
     </li>
     <li>
       <router-link to="/terms-and-conditions">Terms And Conditions</router-link>
