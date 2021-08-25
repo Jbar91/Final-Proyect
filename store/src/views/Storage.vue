@@ -42,7 +42,6 @@ export default {
   },
   data() {
     return {
-      property: "Support",
       addItems: false,
       products: articles,
     };
