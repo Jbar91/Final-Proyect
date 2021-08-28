@@ -1,6 +1,9 @@
 <template>
   <v-container :fluid="true" class="log-display bg-blue-grey-darken-2">
-    <v-container v-if="!status" class="bg-grey-lighten-2 log-inputs">
+    <v-container
+      v-if="status !== 'isOnline'"
+      class="bg-grey-lighten-2 log-inputs"
+    >
       <h1>Login</h1>
       <form action="">
         <label for="username">Username:</label>
@@ -28,7 +31,10 @@
         </span>
       </form>
     </v-container>
-    <v-container v-if="status" class="bg-grey-lighten-2 log-inputs">
+    <v-container
+      v-if="status === 'isOnline'"
+      class="bg-grey-lighten-2 log-inputs"
+    >
       <h2>Hello {{ user }}</h2>
       <v-btn @click="logOut">Log Out</v-btn>
     </v-container>
@@ -49,31 +55,20 @@ export default {
   },
   methods: {
     send() {
-      const correct =
-        this.username === this.user && this.password === this.pass;
-      const incorrectPassword =
-        this.username === this.user && this.password !== this.pass;
-      const incorrectUsername =
-        this.username !== this.user && this.password === this.pass;
-
-      if (correct) {
-        sessionStorage.setItem("Logged", JSON.stringify(true));
+      if (this.username === this.user && this.password === this.pass) {
+        sessionStorage.setItem("Logged", JSON.stringify("isOnline"));
         this.cancel();
-      } else if (incorrectPassword) {
-        this.message = "Incorrect password, please try again";
-        this.password = "";
-      } else if (incorrectUsername) {
-        this.message = "Incorrect username, please try again";
-        this.username = "";
       } else {
-        this.message = "Incorrect username and password, please try again";
+        this.message = "Incorrect username and/or password, please try again";
+        this.username = "";
+        this.password = "";
       }
     },
     cancel() {
-      window.history.go(-1);
+      this.$router.push({ name: "Storage" });
     },
     logOut() {
-      sessionStorage.setItem("Logged", JSON.stringify(false));
+      sessionStorage.setItem("Logged", JSON.stringify("isOffline"));
       this.cancel();
     },
   },
