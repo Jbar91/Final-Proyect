@@ -3,7 +3,7 @@
     <v-row v-if="!addItems">
       <StorageComp v-for="item in filter" :key="item" :item="item" />
     </v-row>
-    <AddItems
+    <ManageItems
       :items="products"
       v-if="addItems"
       @close="showBuy"
@@ -20,7 +20,7 @@
 
 <script>
 import StorageComp from "../components/StorageComp.vue";
-import AddItems from "../components/AddItems.vue";
+import ManageItems from "../components/ManageItems.vue";
 import { articles } from "../assets/data/articles.json";
 
 export default {
@@ -32,7 +32,7 @@ export default {
   },
   components: {
     StorageComp,
-    AddItems,
+    ManageItems,
   },
   mounted() {
     window.scrollTo(0, 0);
@@ -54,7 +54,7 @@ export default {
       this.products[id].quantity = this.products[id].quantity + amountAdded;
     },
     substract(amountSold, id) {
-      this.products[id].quantity = this.products[id].quantity + amountSold;
+      this.products[id].quantity = this.products[id].quantity - amountSold;
       this.products[id].quantity < 0 ? (this.products[id].quantity = 0) : "";
     },
   },
