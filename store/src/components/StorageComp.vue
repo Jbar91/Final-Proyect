@@ -7,12 +7,12 @@
     >
       <v-row>
         <v-col align="center" cols="6" md="3" sm="3">
-          <router-link :to="{ name: 'Items', params: { id: item.Id } }">
+          <router-link :to="{ name: 'Item', params: { id: item.Id } }">
             <div class="display-img">
               <img
                 :src="require(`@/assets/imgs/${item.img}`)"
                 :alt="item.name"
-                class="example"
+                class="item-thumbnail"
               />
             </div>
           </router-link>
@@ -71,7 +71,7 @@ export default {
   margin: 0px;
   align-items: center;
 }
-.example {
+.item-thumbnail {
   width: 100%;
 }
 .text {
