@@ -1,5 +1,10 @@
 <template>
   <v-container :fluid="true" class="py-6 bg-blue-grey-darken-2 item-display">
+    <v-container>
+      <v-btn aria-label="Back button" class="float-left " @click="back"
+        ><v-icon>mdi-keyboard-backspace</v-icon></v-btn
+      >
+    </v-container>
     <v-container class="bg-white item-info">
       <img :src="require(`@/assets/imgs/${details.img}`)" alt="" />
       <div>
@@ -19,6 +24,11 @@ export default {
       itemId: this.$route.params.id,
       articles: JSON.parse(localStorage.getItem("products")),
     };
+  },
+  methods: {
+    back() {
+      this.$router.push({ name: "Storage" });
+    },
   },
   computed: {
     details() {
