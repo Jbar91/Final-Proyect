@@ -8,6 +8,12 @@ const routes = [
     component: Storage,
   },
   {
+    path: "/manage-items",
+    name: "ManageItems",
+    component: () =>
+      import(/* webpackChunkName: "ManageItems"*/ "../views/ManageItems.vue"),
+  },
+  {
     path: "/terms-and-conditions",
     name: "TermsAndConditions",
     component: () =>
@@ -28,7 +34,7 @@ const routes = [
       import(/* webpackChunkName: "Contact"*/ "../views/Contact.vue"),
   },
   {
-    path: "/items/:id",
+    path: "/items/:id/:slug",
     name: "Item",
     component: () => import(/* webpackChunkName: "Items"*/ "../views/Item.vue"),
   },
