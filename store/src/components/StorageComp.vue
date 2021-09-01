@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" lg="4" md="6" sm="12">
+  <v-col cols="12" lg="4" md="6" sm="12" style="padding:0px">
     <v-card
       flat
       min-height="130"
@@ -7,7 +7,9 @@
     >
       <v-row>
         <v-col align="center" cols="6" md="3" sm="3">
-          <router-link :to="{ name: 'Item', params: { id: item.Id } }">
+          <router-link
+            :to="{ name: 'Item', params: { id: item.Id, slug: item.name } }"
+          >
             <div class="display-img">
               <img
                 :src="require(`@/assets/imgs/${item.img}`)"

@@ -7,6 +7,7 @@
     </router-link>
     <Select @filter="send($event)" />
     <router-link :to="{ name: 'UserLog' }" class="ml-auto mr-4">
+      <span>{{ userStatus }}</span>
       <v-btn aria-label="Login">
         <v-icon>mdi-login-variant</v-icon>
       </v-btn>
@@ -20,11 +21,19 @@ export default {
   components: {
     Select,
   },
+  props: ["filterValue"],
   name: "Navbar",
   emits: ["filter"],
   methods: {
     send(value) {
       this.$emit("filter", value);
+    },
+  },
+  computed: {
+    userStatus() {
+      let user = JSON.parse(sessionStorage.getItem("Status"));
+      console.log(user);
+      return user;
     },
   },
 };
