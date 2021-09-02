@@ -76,6 +76,14 @@ export default {
 </script>
 
 <style scoped>
+input[type="text"],
+input[type="password"] {
+  max-width: 215px;
+  margin-left: 5px;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
 .log-inputs {
   display: flex;
   flex-direction: column;

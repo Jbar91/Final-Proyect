@@ -1,26 +1,18 @@
 <template>
   <v-container :fluid="true" class="py-6 bg-blue-grey-darken-2 add-display">
-    <v-row v-if="!addItems">
+    <v-row>
       <StorageComp v-for="item in filter" :key="item" :item="item" />
     </v-row>
-    <ManageItems
-      :items="products"
-      v-if="addItems"
-      @close="showBuy"
-      @add="add"
-      @substract="substract"
-    />
-    <v-container :fluid="true" align="end">
-      <v-btn class="my-3 mx-4" aria-label="Add Items" @click="showBuy"
-        >Manage Items</v-btn
-      >
+    <v-container :fluid="true" align="end" v-if="status === 'isOnline'">
+      <router-link :to="{ name: 'ManageItems' }">
+        <v-btn class="my-3 mx-4" aria-label="Manage Items">Manage Items</v-btn>
+      </router-link>
     </v-container>
   </v-container>
 </template>
 
 <script>
 import StorageComp from "../components/StorageComp.vue";
-import ManageItems from "../components/ManageItems.vue";
 import { articles } from "../assets/data/articles.json";
 
 export default {
@@ -32,32 +24,19 @@ export default {
   },
   components: {
     StorageComp,
-    ManageItems,
   },
   mounted() {
-    window.scrollTo(0, 0);
     localStorage.getItem("products")
       ? (this.products = JSON.parse(localStorage.getItem("products")))
-      : "";
+      : localStorage.setItem("products", JSON.stringify(this.products));
   },
   data() {
     return {
-      addItems: false,
       products: articles,
+      status: JSON.parse(sessionStorage.getItem("Logged")),
     };
   },
-  methods: {
-    showBuy() {
-      this.addItems = !this.addItems;
-    },
-    add(amountAdded, id) {
-      this.products[id].quantity = this.products[id].quantity + amountAdded;
-    },
-    substract(amountSold, id) {
-      this.products[id].quantity = this.products[id].quantity - amountSold;
-      this.products[id].quantity < 0 ? (this.products[id].quantity = 0) : "";
-    },
-  },
+  methods: {},
   computed: {
     filter() {
       let filtered = this.products;
