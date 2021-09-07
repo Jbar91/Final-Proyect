@@ -3,7 +3,11 @@
     <v-row>
       <StorageComp v-for="item in filter" :key="item" :item="item" />
     </v-row>
-    <v-container :fluid="true" align="end" v-if="status === 'isOnline'">
+    <v-container
+      :fluid="true"
+      class="manage-container"
+      v-if="status === 'isOnline'"
+    >
       <router-link :to="{ name: 'ManageItems' }">
         <v-btn class="my-3 mx-4" aria-label="Manage Items">Manage Items</v-btn>
       </router-link>
@@ -56,5 +60,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.manage-container {
+  display: flex;
+  justify-content: end;
 }
 </style>
