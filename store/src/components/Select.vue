@@ -4,7 +4,7 @@
     name="options"
     id="select-articles"
     class="mx-auto"
-    @click="send"
+    @click.capture="send"
   >
     <option v-for="item in items" :key="item">
       {{ item }}
@@ -26,6 +26,7 @@ export default {
   methods: {
     send() {
       this.$emit("filter", this.options);
+      console.log(this.options);
     },
   },
 };
