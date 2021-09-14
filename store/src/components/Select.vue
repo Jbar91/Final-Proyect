@@ -6,7 +6,7 @@
     class="mx-auto"
     @click="send"
   >
-    <option v-for="item in items" :key="item" :value="{ categoryValue: item }">
+    <option v-for="item in items" :key="item">
       {{ item }}
     </option>
   </select>
@@ -20,12 +20,12 @@ export default {
   data() {
     return {
       items: categories,
-      options: "",
+      options: "All",
     };
   },
   methods: {
     send() {
-      this.$emit("filter", this.options.categoryValue);
+      this.$emit("filter", this.options);
     },
   },
 };

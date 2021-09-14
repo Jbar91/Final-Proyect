@@ -1,47 +1,54 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
 import Storage from "../views/Storage.vue";
-import Experiments from "../views/Experiments.vue";
-import BuyItemsPage from "../views/BuyItemsPage.vue";
-import TermsAndConditions from "../views/TermsAndConditions.vue";
-import Support from "../views/Support.vue";
-import Contact from "../views/Contact.vue";
 
 const routes = [
-  {
-    path: "/Qlq",
-    name: "Home",
-    component: Home,
-  },
   {
     path: "/",
     name: "Storage",
     component: Storage,
   },
   {
-    path: "/experiments",
-    name: "Experiments",
-    component: Experiments,
-  },
-  {
-    path: "/buy-items",
-    name: "BuyItems",
-    component: BuyItemsPage,
+    path: "/manage-items",
+    name: "ManageItems",
+    component: () =>
+      import(/* webpackChunkName: "ManageItems"*/ "../views/ManageItems.vue"),
   },
   {
     path: "/terms-and-conditions",
     name: "TermsAndConditions",
-    component: TermsAndConditions,
+    component: () =>
+      import(
+        /* webpackChunkName: "TermsAndConditions"*/ "../views/TermsAndConditions.vue"
+      ),
   },
   {
     path: "/support",
     name: "Support",
-    component: Support,
+    component: () =>
+      import(/* webpackChunkName: "Support"*/ "../views/Support.vue"),
   },
   {
     path: "/contact",
     name: "Contact",
-    component: Contact,
+    component: () =>
+      import(/* webpackChunkName: "Contact"*/ "../views/Contact.vue"),
+  },
+  {
+    path: "/items/:id/:slug",
+    name: "Item",
+    component: () => import(/* webpackChunkName: "Items"*/ "../views/Item.vue"),
+  },
+  {
+    path: "/log",
+    name: "UserLog",
+    component: () =>
+      import(/* webpackChunkName: "UserLog"*/ "../views/Log.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () =>
+      import(/* webpackChunkName: "NotFound"*/ "../views/NotFound.vue"),
   },
 ];
 

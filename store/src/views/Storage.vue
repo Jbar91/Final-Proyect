@@ -1,15 +1,15 @@
 <template>
   <v-container :fluid="true" class="py-6 bg-blue-grey-darken-2 add-display">
-    <v-row v-if="!addItems">
+    <v-row>
       <StorageComp v-for="item in filter" :key="item" :item="item" />
     </v-row>
-    <AddItems :items="products" v-if="addItems" @close="showBuy" />
-    <v-container :fluid="true" align="end">
-      <v-btn class="my-3 mx-4" aria-label="Add Items" @click="showBuy"
-        >Add Items</v-btn
-      >
-      <router-link style="text-decoration: none" to="/buy-items">
-        <v-btn class="my-3 mx-4" aria-label="Buy items">Buy Items</v-btn>
+    <v-container
+      :fluid="true"
+      class="manage-container"
+      v-if="status === 'isOnline'"
+    >
+      <router-link :to="{ name: 'ManageItems' }">
+        <v-btn class="my-3 mx-4" aria-label="Manage Items">Manage Items</v-btn>
       </router-link>
     </v-container>
   </v-container>
@@ -17,7 +17,6 @@
 
 <script>
 import StorageComp from "../components/StorageComp.vue";
-import AddItems from "../components/AddItems.vue";
 import { articles } from "../assets/data/articles.json";
 
 export default {
@@ -29,24 +28,19 @@ export default {
   },
   components: {
     StorageComp,
-    AddItems,
   },
   mounted() {
-    window.scrollTo(0, 0);
-    this.filterValue;
+    localStorage.getItem("products")
+      ? (this.products = JSON.parse(localStorage.getItem("products")))
+      : localStorage.setItem("products", JSON.stringify(this.products));
   },
   data() {
     return {
-      property: "Support",
-      addItems: false,
       products: articles,
+      status: JSON.parse(sessionStorage.getItem("Logged")),
     };
   },
-  methods: {
-    showBuy() {
-      this.addItems = !this.addItems;
-    },
-  },
+  methods: {},
   computed: {
     filter() {
       let filtered = this.products;
@@ -66,5 +60,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.manage-container {
+  display: flex;
+  justify-content: end;
 }
 </style>
