@@ -1,11 +1,5 @@
 <template>
-  <select
-    v-model="options"
-    name="options"
-    id="select-articles"
-    class="mx-auto"
-    @click="send"
-  >
+  <select v-model="options" name="options" id="select-articles" class="mx-auto">
     <option v-for="item in items" :key="item">
       {{ item }}
     </option>
@@ -23,9 +17,11 @@ export default {
       options: "All",
     };
   },
-  methods: {
-    send() {
-      this.$emit("filter", this.options);
+  methods: {},
+  watch: {
+    options: function(val) {
+      this.options = val;
+      this.$emit("filter", val);
     },
   },
 };
