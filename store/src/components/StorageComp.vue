@@ -3,7 +3,7 @@
     <v-card
       flat
       min-height="130"
-      class="ma-3 bg-blue-lighten-4 d-flex align-center "
+      class="ma-3 bg-blue-lighten-4 d-flex align-center"
     >
       <v-row>
         <v-col align="center" cols="6" md="3" sm="3">
@@ -15,6 +15,7 @@
                 :src="require(`@/assets/imgs/${item.img}`)"
                 :alt="item.name"
                 class="item-thumbnail"
+                :class="{ disabled: lowStock }"
               />
             </div>
           </router-link>
@@ -27,7 +28,7 @@
           style="padding: 0"
         >
           <v-card-title
-            ><p class="text">
+            ><p class="text" :class="{ disabled: lowStock }">
               {{ item.name }}
             </p></v-card-title
           >
@@ -51,9 +52,13 @@ export default {
       type: Object,
     },
   },
-
   data() {
     return {};
+  },
+  computed: {
+    lowStock() {
+      return this.item.quantity === 0 ? true : false;
+    },
   },
 };
 </script>
@@ -68,6 +73,9 @@ export default {
   align-items: center;
   background-color: white;
   border: 1px solid black;
+}
+.disabled {
+  opacity: 0.3;
 }
 .v-row {
   margin: 0px;
